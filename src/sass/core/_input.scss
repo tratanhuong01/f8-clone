@@ -1,0 +1,52 @@
+@use '../variables' as variables;
+@use '../mixins' as mixins;
+.input {
+    width: 100%;
+    &-default:focus {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    &-default {
+        padding: 1.2rem;
+        border: 0.1rem solid variables.$background-gray-main;;
+        border-radius: 100rem;
+        display: block;
+        width: 100%;
+    }
+    &-password {
+        width: 100%;
+        position: relative;
+        &-icon {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            right: 1rem;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: rgb(105, 101, 101);
+            transform: translateY(-50%);
+        }
+    }
+    &-label {
+        display: block;
+        margin: 1rem 0.5rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    &-error {
+        font-weight: 600;
+        font-size: 1.4rem;
+        padding: 0.8rem;
+
+    }
+    &-search input {
+        padding-left: 4rem !important;
+    }
+    &-relative {
+        position: relative;
+        &-icon {
+            font-size: 1.8rem;
+            color: rgb(105, 101, 101);
+            @include mixins.absoluteCenterLeft(0.6em);
+        }
+    }
+}

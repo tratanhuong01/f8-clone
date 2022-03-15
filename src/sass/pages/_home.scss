@@ -1,0 +1,10 @@
+
+.home {
+    width: 100%;
+    padding: 1.6rem 4rem 1.6rem 1.6rem;
+    display: flex;
+}
+
+@import url('../components/Home/_homeLeft.scss');
+@import url('../components/Home/_homeContent.scss');
+@import url('../components/Home/_homeSlider.scss');

@@ -1,0 +1,85 @@
+@use '../../mixins' as mixins;
+@use '../../variables' as variables;
+
+.form-login {
+    width: 63%;
+    margin-top: -2rem;
+    margin: auto;
+    input {
+        font-size: 1.4rem;
+    }
+    &-top {
+        @include mixins.flexJustifyAlign(space-between,center);
+        margin: 1rem 0rem;
+        padding: 0rem 0.5rem;
+        font-size: 1.35rem;
+        font-weight: 600;
+        span {
+            cursor: pointer;
+        }
+    }
+    &-input {
+        padding-top: 0.9rem !important;
+        padding-bottom: 0.9rem !important;
+        margin: 1.5rem 0rem;
+        border: 0.2rem solid rgb(228, 225, 225) !important;
+        background-color: variables.$background-gray-main;
+    }
+    &-button {
+        width: 100%;
+        padding: 1.2rem;
+        font-weight: bold;
+        font-size: 1.4rem;
+        border-radius: 0.5rem !important;
+        background-color: variables.$color-main;
+        color: white;
+    }
+    &-number-phone {
+        margin: 1rem 0rem;
+        border-radius: 100rem;
+        background-color: variables.$background-gray-main;
+        @include mixins.flexJustifyAlign(space-between,center);
+        gap: 1rem;
+        &-left {
+            padding-left: 2rem;
+            @include mixins.flexJustifyAlign(center,center);
+            font-size: 1.4rem;
+            i {
+                font-size: 1.7rem;
+            }
+        }
+        &-container {
+            flex :1;
+            input {
+                background-color: variables.$background-gray-main;
+                border-left: 1px solid #ccc;
+                border-top-left-radius: 0rem;
+                border-bottom-left-radius: 0rem;
+            }
+        }
+    }
+    &-code {
+        border-radius: 100rem;
+        background-color: variables.$background-gray-main;
+        @include mixins.flexJustifyAlign(space-between,center);
+        margin-bottom: 2rem;
+        gap: 1rem;
+        &-left {
+            width: 100%;
+            position: relative;
+            input {
+                background-color: transparent;
+                padding-right: 10rem;
+            }
+        }
+        button {
+            border: 2px solid rgb(207, 204, 204);
+            position: absolute;
+            right:0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            top: 0;
+            padding: 1.2rem 3rem;
+        }
+    }
+}

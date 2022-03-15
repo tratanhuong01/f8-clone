@@ -1,0 +1,65 @@
+@use '../../mixins' as mixins;
+@use '../../variables' as variables;
+
+.home-left {
+    &-top {
+        margin: auto;
+        display: block;
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 2rem;
+        color: rgb(241, 239, 239);
+        border-radius: 100rem;
+        cursor: pointer;
+        background-color: #1472E3;
+        @include mixins.flexJustifyAlign(center,center);
+        transition: transform .3s ease,-webkit-transform .3s ease;
+        &:hover {
+            font-size: 2.4rem;
+        }
+    }
+    &-popover {
+        padding: 1.2rem;
+        &:hover {
+            background-color: variables.$background-gray-main;
+        }
+    }
+    &-category {
+        margin-top: 1.2rem;
+        &-item {
+            margin: 0.5rem 0rem;
+            cursor: pointer;
+            padding: 1.3rem;
+            border-radius: 1.6rem;
+            svg {
+                display: block;
+                margin: auto;
+                width: 1.8rem;
+                height: 1.8rem;
+            }
+            p {
+                text-align: center;
+                font-weight: 600;
+                margin: 0.5rem 0rem;
+                font-size: 1.1rem;
+            }
+            &:hover {
+                background-color: variables.$background-gray-main;
+            }
+        }
+        &-active {
+            background-color: variables.$background-gray-main;
+        }
+    }
+}
+.arrow-popover .ant-popover-arrow {
+    display: none  !important;
+}
+.arrow-popover .ant-popover-inner {
+    &-content {
+        padding: 0;
+        margin: 1rem 0rem;
+    }
+    width: 18rem;
+    margin-left: 2rem;
+}

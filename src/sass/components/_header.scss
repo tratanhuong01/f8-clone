@@ -1,0 +1,46 @@
+@use '../mixins' as mixins;
+@use '../variables' as variables;
+
+.header {
+    width: 100%;
+    padding: 1.5rem 3rem;
+    border-bottom: 1px solid variables.$background-gray-main;
+    @include mixins.flexJustifyAlign(space-between,center);
+    &-left {
+        width: 25%;
+        @include mixins.flexJustifyAlign(flex-start,center);
+        gap: 1rem;
+        img {
+            width: 3.8rem;
+            height: 3.8rem;
+            object-fit: cover;
+        }
+        span {
+            font-weight: bold;
+            letter-spacing: 0.2;
+            font-size: 1.3rem;
+        }
+    }
+    &-center {
+        width: 50%;
+        &-wrapper {
+            width: 66%;
+            margin: auto;
+            input {
+                padding: 0.8rem;
+                font-size: 1.3rem;
+            }
+        }
+    }
+    &-right {
+        width: 25%;
+        text-align: right;
+        button {
+            background-color: variables.$color-main;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 1rem 3rem;
+        }
+    }
+}

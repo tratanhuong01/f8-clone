@@ -1,0 +1,28 @@
+@mixin flexJustifyAlign($justifyContent,$alignItems) {
+    display: flex;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+@mixin absoluteTranslate($top : 'auto',$right : 'auto',$bottom : 'auto',$left : 'auto',$translate) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+    transform: $translate;
+}
+
+@mixin absoluteCenterRight($right) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: $right;
+}
+
+@mixin absoluteCenterLeft($left) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: $left;
+}

@@ -1,0 +1,106 @@
+@use '../mixins' as mixins;
+@use '../variables' as variables;
+
+.login {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    @include mixins.flexJustifyAlign(center,center);
+    background: {
+        image: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)), url('../../assets/images/bg_login.png');
+        size: cover;
+    }
+    &::before {
+        filter: blur(0.5em);
+    }
+    &-content {
+        border-radius: 0.8rem;
+        width: 60rem;
+        height: 60rem;
+        padding: 6rem 1rem;
+        position: relative;
+        background-color: white;
+        &-link {
+            display: block;
+            text-align: center;
+        }
+        &-image {
+            width: 4.4rem;
+            height: 4.4rem;
+            object-fit: cover;
+        }
+        &-title {
+            margin-top: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        &-main {
+            margin: auto;
+            margin-top: 6rem;
+            &-item {
+                box-sizing: content-box;
+                font-weight: 500;
+                font-size: 1.4rem;
+                width:  calc(50% - 1.5rem);
+                height: 1.25rem;
+                border-radius: 100rem;
+                margin: 1rem auto;
+                padding: 1.5rem;
+                gap: 0rem 1rem;
+                border: 0.15rem solid variables.$background-gray-main;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                &:hover {
+                    background-color: variables.$background-gray-main;
+                }
+                span {
+                    flex: 1;
+                    display: block;
+                    text-align: center;
+                }
+            }
+        }
+        &-footer {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 6rem;
+            span:nth-child(1) {
+                color: rgb(73, 71, 71);
+            }
+            span:nth-child(2) {
+                color: variables.$color-main;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            &-forget-password {
+                text-align: center;
+                font-weight: 600;
+                margin: 1rem;
+                color: variables.$color-main;
+            }
+        }
+        &-previous {
+            position: absolute;
+            cursor: pointer;
+            top: 3rem;
+            left: 3rem;
+            font-size: 4rem;
+        }
+    }
+    &-footer {
+        font-size: 1.4rem;
+        padding: 1em 0em;
+        text-align: center;
+        display: flex;
+        gap: 1em;
+        a,span {
+            color: variables.$background-gray-main;
+        }
+    }
+}
+
+@import url('../components/Login/_formLogin.scss');

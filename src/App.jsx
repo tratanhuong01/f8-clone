@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react'
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import routes from './routes/routes';

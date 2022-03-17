@@ -2,6 +2,10 @@
 @use '../../variables' as variables;
 
 .home-slider {
+    margin-top: 2rem;
+    @include mixins.smallTablet {
+        margin-top: 0;
+    }
     position: relative;
     &-main {
         overflow: hidden;
@@ -23,15 +27,21 @@
             border-radius: 2rem;
             color: white;
             &-left {
-                width: 50%;
-                padding-top: 3.6rem;
+                width: 100%;
+                @include mixins.phone {
+                    width: 80%;
+                }
+                @include mixins.bigTablet {
+                    width: 50%;
+                }
                 padding-left: 3.6rem;
-                padding-right: 3.6rem;
+                @include mixins.flexJustifyAlign(flex-start,center);
                 h1 {
                     color: white;
                     font-weight: bold;
                 }
                 p {
+                    width: 90%;
                     font-size: 1.4rem;
                 }
                 button {
@@ -43,7 +53,15 @@
                 }
             }
             &-right {
-                width: 50%;
+                background-position: 0;
+                display: none;
+                @include mixins.phone {
+                    width: 20%;
+                    display: block;
+                }
+                @include mixins.bigTablet {
+                    width: 50%;
+                }
                 img {
                     width: 90%;
                     height: 24rem;
@@ -64,6 +82,10 @@
         @include mixins.flexJustifyAlign(center,center);
         background-color: white !important;
         font-size: 1.8rem;
+        display: none !important;
+        @include mixins.phone {
+            display: flex;
+        }
     }
     &-button-left {
         @include mixins.absoluteCenterLeft(-1.5rem);

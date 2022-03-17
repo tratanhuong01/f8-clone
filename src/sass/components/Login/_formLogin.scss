@@ -2,7 +2,13 @@
 @use '../../variables' as variables;
 
 .form-login {
-    width: 63%;
+    width: 80%;
+    @include mixins.phone {
+        width: 73%;
+    }
+    @include mixins.smallTablet {
+        width: 63%;
+    }
     margin-top: -2rem;
     margin: auto;
     input {
@@ -26,6 +32,7 @@
         background-color: variables.$background-gray-main;
     }
     &-button {
+        margin-top: 1.5rem;
         width: 100%;
         padding: 1.2rem;
         font-weight: bold;
@@ -37,25 +44,26 @@
     &-number-phone {
         margin: 1rem 0rem;
         border-radius: 100rem;
-        background-color: variables.$background-gray-main;
-        @include mixins.flexJustifyAlign(space-between,center);
-        gap: 1rem;
+        position: relative;
         &-left {
-            padding-left: 2rem;
+            width: 11rem;
+            height: 4.8rem;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            position: absolute;
+            padding-left: 1rem;
+            border-right: 1px solid #ccc;
             @include mixins.flexJustifyAlign(center,center);
             font-size: 1.4rem;
             i {
                 font-size: 1.7rem;
             }
         }
-        &-container {
-            flex :1;
-            input {
-                background-color: variables.$background-gray-main;
-                border-left: 1px solid #ccc;
-                border-top-left-radius: 0rem;
-                border-bottom-left-radius: 0rem;
-            }
+        input {
+            margin-bottom: 1rem;
+            background-color: variables.$background-gray-main;
+            padding-left: 12rem !important;
         }
     }
     &-code {

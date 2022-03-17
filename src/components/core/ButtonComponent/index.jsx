@@ -12,7 +12,7 @@ const ButtonComponent = ({ type, link, children, handleClick, className, disable
             }
         }
         //
-    }, [refBtn, link])
+    }, [refBtn, link, disabled])
     //
     return (
         link ? <Link to={link} className={`button-${disabled ? 'disabled' : 'default'} ${className || ''}`}>

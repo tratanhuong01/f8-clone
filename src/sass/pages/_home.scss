@@ -1,10 +1,28 @@
+@use '../mixins' as mixins;
+@use '../variables' as variables;
 
 .home {
-    width: 100%;
-    padding: 1.6rem 4rem 1.6rem 1.6rem;
-    display: flex;
+    padding: 0rem 1.5rem;
+    @include mixins.phone {
+        padding: 0rem 2.5rem;
+    }
+    overflow: hidden;
+    @include mixins.smallTablet {
+    }
+    // &-left-fake {
+    //     @include mixins.smallTablet {
+    //         padding: 1.6rem 4rem 1.6rem 1.6rem;
+    //     }
+    //     display: none;
+    //     @include mixins.smallTablet {
+    //         display: block;
+    //     }
+    //     width: 7.5rem;
+    //     height: 100vh;
+    // }
 }
 
 @import url('../components/Home/_homeLeft.scss');
 @import url('../components/Home/_homeContent.scss');
 @import url('../components/Home/_homeSlider.scss');
+@import url('../components/Home/_listItemHomeContent.scss');

@@ -17,8 +17,11 @@
     }
     &-content {
         border-radius: 0.8rem;
-        width: 60rem;
-        height: 60rem;
+        width: 90%;
+        @include mixins.smallTablet {
+            width: 60rem;
+            height: 60rem;
+        }
         padding: 6rem 1rem;
         position: relative;
         background-color: white;
@@ -43,7 +46,10 @@
                 box-sizing: content-box;
                 font-weight: 500;
                 font-size: 1.4rem;
-                width:  calc(50% - 1.5rem);
+                width:  calc(70% - 1.5rem);
+                @include mixins.phone {
+                    width:  calc(50% - 1.5rem);
+                }
                 height: 1.25rem;
                 border-radius: 100rem;
                 margin: 1rem auto;
@@ -77,6 +83,7 @@
                 cursor: pointer;
             }
             &-forget-password {
+                cursor: pointer;
                 text-align: center;
                 font-weight: 600;
                 margin: 1rem;

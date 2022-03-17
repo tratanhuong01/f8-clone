@@ -26,3 +26,35 @@
     transform: translateY(-50%);
     left: $left;
 }
+
+@mixin phone {
+    @media all and (min-width: 600px) {
+        @content
+    };
+}
+
+@mixin smallTablet {
+    @media all and (min-width: 900px) {
+        @content
+    };
+}
+
+@mixin bigTablet {
+    @media all and (min-width: 1200px) {
+        @content
+    };
+}
+
+@mixin desktop {
+    @media all and (min-width: 1800px) {
+        @content
+    };
+}
+
+@mixin specicalScreen($breakpoint) {
+    @media all and (min-width: $breakpoint) {
+        @content
+    };
+}
+
+

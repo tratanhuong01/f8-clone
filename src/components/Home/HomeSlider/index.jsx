@@ -89,11 +89,13 @@ const HomeSlider = () => {
                         <div key={slider.id} className='home-slider-wrapper-content'
                             style={{ background: slider.background }}>
                             <div className='home-slider-wrapper-content-left'>
-                                <h1>{slider.title}</h1>
-                                <p>{slider.content}</p>
-                                <ButtonComponent>
-                                    {slider.button}
-                                </ButtonComponent>
+                                <div>
+                                    <h1>{slider.title}</h1>
+                                    <p>{slider.content}</p>
+                                    <ButtonComponent>
+                                        {slider.button}
+                                    </ButtonComponent>
+                                </div>
                             </div>
                             <div className='home-slider-wrapper-content-right'>
                                 <img src={slider.image} alt='' srcSet='' />

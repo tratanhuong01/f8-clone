@@ -34,9 +34,9 @@
     }
     &-error {
         font-weight: 600;
-        font-size: 1.4rem;
-        padding: 0.8rem;
-
+        color: red;
+        font-size: 1.2rem;
+        margin: 0 0.7rem;
     }
     &-search input {
         padding-left: 4rem !important;

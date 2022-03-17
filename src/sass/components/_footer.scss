@@ -2,15 +2,28 @@
 @use '../variables' as variables;
 
 .footer {
-    padding: 4rem;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 99999999;
+    padding: 2rem;
+    @include mixins.smallTablet {
+        padding: 4rem;
+    }
     background-color: variables.$background-color-footer;
     width: 100%;
     &-wrapper {
-        padding-top: 4rem;
-        width: 80%;
-        display: flex;
+        width: 100%;
+        @include mixins.smallTablet {
+            width: 90%;
+            padding-top: 4rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @include mixins.bigTablet {
+            width: 80%;
+            gap: 4rem;
+        }
         margin: auto;
-        gap: 4rem;
         font-size: 1.4rem;
         color: variables.$color-text-footer;
         p {
@@ -26,7 +39,15 @@
         }
     }
     &-item {
-        width: 25%;
+        margin-top: 5rem;
+        width: 100%;
+        @include mixins.smallTablet {
+            width: 50%;
+        }
+        @include mixins.bigTablet {
+            width: calc(25% - 32px);
+            margin-top: 0rem;
+        }
         &-top {
             @include mixins.flexJustifyAlign(flex-start,center);
             gap: 2rem;
@@ -44,13 +65,24 @@
         }
     }
     &-end {
-        width: 80%;
-        @include mixins.flexJustifyAlign(space-between,center);
+        width: 100%;
+        @include mixins.smallTablet {
+            width: 90%;
+            @include mixins.flexJustifyAlign(space-between,center);
+        }
+        @include mixins.bigTablet {
+            width: 80%;
+        }
         margin: 4rem auto;
         color: variables.$color-text-footer;
         &-right { 
-            @include mixins.flexJustifyAlign(center,center);
+            @include mixins.flexJustifyAlign(flex-start,center);
             gap: 1.5rem;
+            margin: 1rem 0rem;
+            @include mixins.phone {
+                @include mixins.flexJustifyAlign(flex-end,center);
+                margin: 0;
+            }
             li {
                 font-size: 3.5rem;
             }

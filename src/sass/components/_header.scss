@@ -3,38 +3,97 @@
 
 .header {
     width: 100%;
+    position: sticky;
+    z-index: 999999;
+    background-color: white;
+    top: 0;
+    left: 0;
     padding: 1.5rem 3rem;
+    box-shadow: 0 0.2rem 1rem #ccc;
     border-bottom: 1px solid variables.$background-gray-main;
     @include mixins.flexJustifyAlign(space-between,center);
     &-left {
-        width: 25%;
+        width: 50%;
+        @include mixins.phone {
+            width: 10%;
+        }
+        @include mixins.smallTablet {
+            width: 25%;
+        }
         @include mixins.flexJustifyAlign(flex-start,center);
         gap: 1rem;
+        svg {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+        }
+        svg {
+            @include mixins.smallTablet {
+                display: none;
+            }
+        }
         img {
+            display: none;
+            @include mixins.smallTablet {
+                display: block;
+            }
             width: 3.8rem;
             height: 3.8rem;
             object-fit: cover;
         }
         span {
+            display: none;
+            @include mixins.smallTablet {
+                display: block;
+            }
             font-weight: bold;
             letter-spacing: 0.2;
             font-size: 1.3rem;
         }
     }
     &-center {
-        width: 50%;
+        display: none;
+        @include mixins.phone {
+           width: 65%;
+           display: block;
+        }
+        @include mixins.smallTablet {
+            width: 50%;
+        }
         &-wrapper {
-            width: 66%;
+            width: 100%;
             margin: auto;
+            @include mixins.smallTablet {
+                width: 66%;
+            }
             input {
+                border: 1px solid #ccc;
                 padding: 0.8rem;
                 font-size: 1.3rem;
             }
         }
     }
     &-right {
-        width: 25%;
-        text-align: right;
+        width: 50%;
+        @include mixins.flexJustifyAlign(flex-end,center);
+        margin-right: -1.5rem;
+        &-search {
+            display: block;
+            cursor: pointer;
+            font-size: 2rem;
+            margin: 0rem 2rem;
+            @include mixins.phone {
+                display: none;
+            }
+        }
+        @include mixins.phone {
+            width: 25%;
+            margin-right: 0rem;
+        }
+        @include mixins.smallTablet {
+            width: 25%;
+        }
         button {
             background-color: variables.$color-main;
             color: white;

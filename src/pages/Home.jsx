@@ -8,6 +8,9 @@ const Home = () => {
         <WrapperPage>
             <div className='home'>
                 <HomeLeft />
+                {/* <div className='home-left-fake'>
+
+                </div> */}
                 <HomeContent />
             </div>
         </WrapperPage>

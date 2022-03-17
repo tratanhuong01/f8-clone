@@ -1,4 +1,16 @@
+@use '../../mixins' as mixins;
+@use '../../variables' as variables;
+
 .home-content {
     flex: 1;
-    padding-left: 3.5rem;
+    @include mixins.smallTablet {
+        padding-left: 10rem;
+    }
+    &-main {
+        width: 100%;
+        @include mixins.smallTablet {
+            width: 95%;
+        }
+        margin: auto;
+    }
 }

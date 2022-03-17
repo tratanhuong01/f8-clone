@@ -1,6 +1,10 @@
-import { PAGE_HOME, PAGE_LOGIN } from "../constants/constants";
+import { PAGE_BLOG, PAGE_HOME, PAGE_LOGIN, PAGE_ROUTES, PAGE_STUDY } from "../constants/constants";
+import Blog from "../pages/Blog";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import NotFound from "../pages/NotFound";
+import Route from "../pages/Route";
+import Study from "../pages/Study";
 
 const routes = [
     {
@@ -13,6 +17,31 @@ const routes = [
         id: 1,
         element: <Home />,
         path: PAGE_HOME,
+        exact: true
+    },
+    {
+        id: 2,
+        element: <Route />,
+        path: PAGE_ROUTES,
+        exact: true
+    },
+    {
+        id: 3,
+        element: <Study />,
+        path: PAGE_STUDY,
+        exact: true
+    },
+    {
+        id: 4,
+        element: <Blog />,
+        path: PAGE_BLOG,
+        exact: true
+    },
+    {
+
+        id: 'notFound',
+        element: <NotFound />,
+        path: '*',
         exact: true
     }
 ];

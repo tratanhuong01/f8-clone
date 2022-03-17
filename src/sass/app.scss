@@ -1,10 +1,23 @@
+@use './_mixins' as mixins;
+
 @import url('./_variables.scss');
 @import url('./_reset.scss');
 
-//
-@import url('./components/_header.scss');
-@import url('./components/_footer.scss');
+// page
+@import url('./pages/_notFound.scss');
 @import url('./pages/_login.scss');
 @import url('./pages/_home.scss');
+@import url('./pages/_route.scss');
+@import url('./pages/_study.scss');
+@import url('./pages/_blog.scss');
+// page
+
+// core
 @import url('./core/_input.scss');
 @import url('./core/_button.scss');
+// core
+
+// component
+@import url('./components/_header.scss');
+@import url('./components/_footer.scss');
+// component

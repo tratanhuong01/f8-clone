@@ -1,0 +1,86 @@
+@use '../mixins' as mixins;
+@use '../variables' as variables;
+
+.blog {
+    @include mixins.bigTablet {
+        padding: 0rem 3rem; 
+    }
+    &-content {
+        display: flex;
+        gap: 3rem;
+        @include mixins.bigTablet {
+            gap: 10rem;
+        }
+        @include mixins.specicalScreen(1500px) {
+            gap: 20rem;
+        }
+        &-left {
+            width: 100%;
+            @include mixins.specicalScreen(1000px) {
+                width: 63%;
+            }
+            &-item {
+                margin-bottom: 2rem;
+                padding: 2rem;
+                border-radius: 1rem;
+                border: .2rem solid rgb(230, 229, 229);
+                &-top {
+                    @include mixins.flexJustifyAlign(flex-start,center);
+                    gap: 1rem;
+                    img {
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 100rem;
+                    }
+                    a {
+                        font-size: 1.45rem;
+                        font-weight: 600;
+                        color: rgb(126, 122, 122);
+                    }
+                }
+                &-title {
+                    font-size: 2rem;
+                    font-weight: bolder;
+                    margin: 1rem 0rem;
+                }
+                &-desc {
+                    margin: 0.7rem 0rem;
+                    font-size: 1.45rem;
+                    color: rgb(129, 126, 126);
+                }
+                &-footer {
+                    margin-top: 1.5rem;
+                    font-size: 1.45rem;
+                    display: flex;
+                    gap: 0.5rem;
+                    color: rgb(34, 33, 33);
+                }
+            }
+        }
+        &-right {
+            width: 37%;
+            display: none;
+            @include mixins.specicalScreen(1000px) {
+                display: block;
+            }
+            &-top {
+                margin: 1.2rem 0rem;
+                font-weight: 600;
+                color: rgb(128, 122, 122);
+            }
+            &-item {
+                width: 75%;
+                display: flex;
+                margin-left: -0.5rem;
+                flex-wrap: wrap;
+                gap: 0.8rem;
+                font-size: 1.45rem;
+                li {
+                    padding: 0.5rem 1.2rem;
+                    background-color: variables.$background-gray-main;
+                    border-radius: 100rem;
+                }
+            }
+        }
+    }
+}

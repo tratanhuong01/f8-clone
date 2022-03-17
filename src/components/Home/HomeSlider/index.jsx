@@ -79,6 +79,7 @@ const HomeSlider = () => {
         <div className="home-slider">
 
             <ScrollContainer className="home-slider-main" onEndScroll={() => {
+                // refContainer.current.style.transform = `translateX(-${(slide + 1) * 100}%)`;
             }}>
                 <ButtonComponent handleClick={() => setSlide(slide - 1 < 0 ? 3 : slide - 1)}
                     className='home-slider-button home-slider-button-left'>
@@ -108,8 +109,21 @@ const HomeSlider = () => {
                     <i className='bx bx-chevron-right'></i>
                 </ButtonComponent>
             </ScrollContainer>
-
+            <PaginationHomeSlider slide={slide} setSlide={setSlide} length={sliders.length} />
         </div >
+    )
+}
+
+const PaginationHomeSlider = ({ slide, length, setSlide }) => {
+    return (
+        <ul className='home-slider-pagination'>
+            {[1, 2, 3, 4].map((item, index) =>
+                <li onClick={() => setSlide(index)} key={index} className={`home-slider-pagination-item 
+                ${slide === index ? 'home-slider-pagination-item-active' : ''}`}>
+
+                </li>
+            )}
+        </ul>
     )
 }
 

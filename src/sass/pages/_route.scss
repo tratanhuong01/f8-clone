@@ -1,0 +1,108 @@
+@use '../mixins' as mixins;
+@use '../variables' as variables;
+
+.route {
+    @include mixins.bigTablet {
+        padding: 0rem 3rem; 
+    }
+    @include mixins.specicalScreen(1500px) {
+        width: 60%;
+    }
+    &-top {
+        margin-top: 2rem;
+        &-title {
+            font-size: 2.3rem;
+            font-weight: bolder;
+            margin-bottom: 1.5rem;
+        }
+        // &-desc {
+
+        // }
+    }
+    &-center {
+        @include mixins.specicalScreen(1100px) {
+            flex-direction: row;
+        }
+        margin: 8rem 0rem 10rem 0rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+        &-item {
+            width: 100%;
+            @include mixins.specicalScreen(1100px) {
+                width: 50%;
+            }
+            padding: 2rem;
+            @include mixins.flexJustifyAlign(flex-start,center);
+            border-radius: 1.2rem;
+            border: 0.2rem solid rgb(229, 226, 226);
+            &-left {
+                padding-right: 2rem;
+                flex: 1;
+                h3 {
+                    font-weight: bolder;
+                    margin-bottom: 2rem;
+                }
+                p {
+                    text-align: justify;
+                    font-size: 1.45rem;
+                }
+                button {
+                    background-color: variables.$color-main;
+                    font-size: 1.4rem;
+                    margin-left: -0.3rem;
+                    padding: 0.6rem 1.5rem !important;
+                    color: white;
+                    font-weight: 600;
+                }
+            }
+            &-right {
+                height: 100%;
+                padding-top: 1.5rem;
+                @include mixins.flexJustifyAlign(center,flex-start);
+                img {
+                    width: 12.4rem;
+                    height: 12.4rem;
+                    border-radius: 100rem;
+                    padding: 0.5rem;
+                    border: .4rem solid variables.$color-main;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    &-footer {
+        margin-top: 3rem;
+        @include mixins.flexJustifyAlign(flex-end,center);
+        &-left {
+            width: 100%;
+            @include mixins.smallTablet {
+                width: 50%;
+            }
+            h2 {
+                font-weight: bolder;
+                margin-bottom: 2rem;
+            }
+            p {
+                font-size: 1.45rem;
+                margin-bottom: 1.5rem;
+            }
+            button {
+                font-weight: 600;
+                border: 2px solid black !important;
+                padding: 0.8rem 1.6rem !important;
+            }
+        }
+        &-right {
+            width: 50%;
+            display: none;
+            @include mixins.smallTablet {
+                @include mixins.flexJustifyAlign(flex-end,center);
+            }
+            img {
+                width: 42rem;
+                object-fit: cover;
+            }
+        }
+    }
+}

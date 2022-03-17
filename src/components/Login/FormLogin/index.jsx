@@ -20,7 +20,8 @@ const FormLogin = () => {
     //
     return (
         <form className='form-login' handleSubmit={handleSubmit}>
-            {!isLogin && <InputComponent label='Họ tên' type='text' placeholder='Họ tên' className='form-login-input' />}
+            {!isLogin && <InputComponent label='Họ tên' type='text' placeholder='Họ tên'
+                register={register} error={errors} name='fullName' className='form-login-input' />}
             <div className='form-login-top'>
                 <span>{isEmail ? 'Email' : 'Số điện thoại'}</span>
                 <span onClick={() => authsDispatch(authsAction.updateData('isEmail', !isEmail))}>
@@ -45,11 +46,9 @@ const FormLogin = () => {
                                 error={errors} type='text' placeholder='Số điện thoại' />
                         </div>
                         <div className='form-login-code'>
-                            <div className='form-login-code-left'>
-                                <InputComponent register={register} name='code'
-                                    error={errors} type='text' placeholder='Mã xác nhận' />
-                                <ButtonComponent disabled>Gửi mã</ButtonComponent>
-                            </div>
+                            <InputComponent register={register} name='code'
+                                error={errors} type='text' placeholder='Mã xác nhận' />
+                            <ButtonComponent disabled>Gửi mã</ButtonComponent>
                         </div>
                     </>
             }

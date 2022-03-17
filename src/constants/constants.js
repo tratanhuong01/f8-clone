@@ -10,3 +10,9 @@ export const REGEX_EMAIL_OR_USERNAME = /^(?:[A-Z\d][A-Z\d_-]{5,10}|[A-Z0-9._%+-]
 //
 export const REGEX_NUMBER = /^\d+$/;
 //
+export const PAGE_ROUTES = '/route';
+//
+export const PAGE_STUDY = '/study';
+//
+export const PAGE_BLOG = '/blog';
+//

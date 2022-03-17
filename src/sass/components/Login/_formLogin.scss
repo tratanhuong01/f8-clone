@@ -67,18 +67,12 @@
         }
     }
     &-code {
-        border-radius: 100rem;
-        background-color: variables.$background-gray-main;
-        @include mixins.flexJustifyAlign(space-between,center);
-        margin-bottom: 2rem;
-        gap: 1rem;
-        &-left {
-            width: 100%;
-            position: relative;
-            input {
-                background-color: transparent;
-                padding-right: 10rem;
-            }
+        position: relative;
+        input {
+            background-color: transparent;
+            padding-right: 10rem;
+            margin-bottom: 1rem;
+            background-color: variables.$background-gray-main;
         }
         button {
             border: 2px solid rgb(207, 204, 204);

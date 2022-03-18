@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import item_course from '../../../../assets/images/item_course.png';
 import ButtonComponent from '../../../core/ButtonComponent';
 import logo from '../../../../assets/images/logo.png';
 import ScrollContainer from 'react-indiana-drag-scroll';
+import { PAGE_COURSE_DETAIL, PAGE_ROUTE_DETAIL } from '../../../../constants/constants';
 
-const ListItemHomeContent = ({ title, isNew, type }) => {
+const ListItemHomeContent = ({ title, isNew, type, study }) => {
     return (
         <div className='course-list'>
             <div className='course-list-top'>
@@ -15,9 +16,9 @@ const ListItemHomeContent = ({ title, isNew, type }) => {
                         MỚI
                     </span>}
                 </div>
-                <div className='course-list-top-right'>
-                    <Link to=''>Xem chi tiết</Link><i className='bx bx-chevron-right'></i>
-                </div>
+                {!study && <div className='course-list-top-right'>
+                    <Link to={PAGE_ROUTE_DETAIL}>Xem chi tiết</Link><i className='bx bx-chevron-right'></i>
+                </div>}
             </div>
             <ScrollContainer className='course-list-main'>
                 {[1, 2, 3, 4, 5, 6].map(item =>
@@ -30,6 +31,7 @@ const ListItemHomeContent = ({ title, isNew, type }) => {
 
 const ItemHomeContent = ({ type }) => {
     //
+    const nav = useNavigate();
     const view = () => {
         switch (type) {
             case 0:
@@ -100,7 +102,7 @@ const ItemHomeContent = ({ type }) => {
                     </>
                 }
                 <div>
-                    <ButtonComponent>
+                    <ButtonComponent handleClick={() => nav(PAGE_COURSE_DETAIL)}>
                         Xem {view()}
                     </ButtonComponent>
                 </div>

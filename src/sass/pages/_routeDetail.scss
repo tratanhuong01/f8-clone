@@ -1,0 +1,101 @@
+@use '../variables' as variables;
+@use '../mixins' as mixins;
+
+.route-detail {
+    margin-top: 3rem;
+    width: 100%;
+    @include mixins.bigTablet {
+        padding: 0rem 3rem; 
+        width: 70%;
+    }
+    &-title {
+        width: 100%;
+        @include mixins.bigTablet {
+            width: 70%;
+        }
+        @include mixins.smallTablet {
+            width: 90%;
+        }
+        font-weight: 900;
+        margin-bottom: 1rem;
+    }
+    &-desc {
+        width: 100%;
+        @include mixins.bigTablet {
+            width: 70%;
+        }
+        @include mixins.smallTablet {
+            width: 90%;
+        }
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        span:nth-child(1) {
+            color: variables.$color-main;
+            font-weight: 600;
+        }
+        span:nth-child(2) {
+            font-weight: 600;
+        }
+    }
+    &-end-desc {
+        border-left: 0.2rem solid variables.$color-main;
+        padding-left: 2rem;
+        color: rgb(145, 139, 139);
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    &-title_ {
+        font-weight: 900;
+        margin: 1.5rem 0rem;
+    }
+    &-desc_ {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    &-box {
+        border: .15rem solid rgb(226, 223, 223);
+        padding: 2rem;
+        @include mixins.phone {
+            display: flex;
+            gap: 2rem;
+        }
+        border-radius: 1.4rem;
+        margin-bottom: 3rem;
+        img {
+            width: 100%;
+            @include mixins.phone {
+                width: 23rem;
+                margin-bottom: 0rem;
+            }
+            margin-bottom: 2rem;
+            object-fit: cover;
+            border-radius: 1.6rem;
+        }
+        &-right {
+            padding: 0rem 1rem;
+            @include mixins.phone {
+                padding: 0rem;
+            }
+            h3 {
+                font-weight: 900;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 1.4rem;
+            }
+            button {
+                width: 100%;
+                @include mixins.phone {
+                    width: auto;
+                }
+                padding: 0.7rem 2.5rem;
+                margin-left: -1rem;
+                color: white;
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin: 1rem 0rem;
+                background-color: variables.$color-main;
+            }
+        }
+    }
+}

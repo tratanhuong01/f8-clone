@@ -13,8 +13,8 @@ const Study = () => {
                         description={`Các khóa học được thiết kế phù hợp cho cả người mới, miễn phí, nội dung dễ hiểu.`}
                     />
                     <div className='study-content'>
-                        <ListItemHomeContent title='Lộ trình học Front-end' isNew type={0} />
-                        <ListItemHomeContent title='Lộ trình học Back-end' type={0} />
+                        <ListItemHomeContent title='Lộ trình học Front-end' isNew type={0} study />
+                        <ListItemHomeContent title='Lộ trình học Back-end' type={0} study />
                     </div>
                     <FooterSecond item={{
                         title: 'Bạn đang tìm kiếm lộ trình học cho người mới?',

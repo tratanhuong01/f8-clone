@@ -13,14 +13,14 @@
     transform: $translate;
 }
 
-@mixin absoluteCenterRight($right) {
+@mixin absoluteCenterRight($right : 0) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: $right;
 }
 
-@mixin absoluteCenterLeft($left) {
+@mixin absoluteCenterLeft($left : 0) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

@@ -16,3 +16,7 @@ export const PAGE_STUDY = '/study';
 //
 export const PAGE_BLOG = '/blog';
 //
+export const PAGE_COURSE_DETAIL = '/course/detail';
+//
+export const PAGE_ROUTE_DETAIL = '/route/detail';
+//

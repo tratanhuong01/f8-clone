@@ -6,6 +6,7 @@
         padding: 0rem 3rem; 
     }
     &-content {
+        margin-top: 12rem;
         display: flex;
         gap: 3rem;
         @include mixins.bigTablet {

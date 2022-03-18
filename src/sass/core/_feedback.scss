@@ -1,0 +1,14 @@
+@use '../mixins' as mixins;
+@use '../variables' as variables;
+
+.feedback {
+    display: none;
+    @include mixins.absoluteCenterRight();
+    button {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        &::before {
+            content: '\e907';
+        }
+    }
+}

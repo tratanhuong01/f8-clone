@@ -76,12 +76,11 @@
         height: 3rem;
         border-radius: 100rem;
         z-index: 100;
-        @include mixins.flexJustifyAlign(center,center);
         background-color: white !important;
         font-size: 1.8rem;
-        display: none !important;
+        display: none;
         @include mixins.phone {
-            display: flex;
+            @include mixins.flexJustifyAlign(center,center);
         }
     }
     &-button-left {

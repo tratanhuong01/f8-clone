@@ -11,13 +11,14 @@
     &-top {
         margin-top: 2rem;
         &-title {
-            font-size: 2.3rem;
-            font-weight: bolder;
+            font-size: 2.8rem;
+            font-weight: 900;
             margin-bottom: 1.5rem;
         }
-        // &-desc {
-
-        // }
+        &-desc {
+            font-size: 1.6rem;
+            color: rgb(131, 127, 127);
+        }
     }
     &-center {
         @include mixins.specicalScreen(1100px) {
@@ -33,14 +34,16 @@
                 width: 50%;
             }
             padding: 2rem;
-            @include mixins.flexJustifyAlign(flex-start,center);
+            @include mixins.flexJustifyAlign(flex-start,flex-start);
             border-radius: 1.2rem;
             border: 0.2rem solid rgb(229, 226, 226);
             &-left {
                 padding-right: 2rem;
                 flex: 1;
                 h3 {
-                    font-weight: bolder;
+                    font-weight: 900;
+                    font-size: 1.9rem;
+                    line-height: 1.9rem;
                     margin-bottom: 2rem;
                 }
                 p {
@@ -50,6 +53,7 @@
                 button {
                     background-color: variables.$color-main;
                     font-size: 1.4rem;
+                    margin-top: 1rem;
                     margin-left: -0.3rem;
                     padding: 0.6rem 1.5rem !important;
                     color: white;

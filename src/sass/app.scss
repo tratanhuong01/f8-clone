@@ -10,14 +10,18 @@
 @import url('./pages/_route.scss');
 @import url('./pages/_study.scss');
 @import url('./pages/_blog.scss');
+@import url('./pages/_courseDetail.scss');
+@import url('./pages/_routeDetail.scss');
 // page
 
 // core
 @import url('./core/_input.scss');
 @import url('./core/_button.scss');
+@import url('./core/_feedback.scss');
 // core
 
 // component
 @import url('./components/_header.scss');
 @import url('./components/_footer.scss');
+@import url('./components/CourseDetail/_contentCourse.scss');
 // component

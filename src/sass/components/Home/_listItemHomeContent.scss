@@ -8,7 +8,7 @@
         @include mixins.flexJustifyAlign(space-between,center);
         &-left {
             h2 {
-                font-weight: bolder;
+                font-weight: 900;
             }
             @include mixins.flexJustifyAlign(center,center);
             &-new {
@@ -25,6 +25,10 @@
         &-right {
             a {
                 color : variables.$color-main;
+                &:hover {
+                    text-decoration: underline;
+                    padding-right: 0.1rem;
+                }
             }
             i {
                 font-size: 2rem;

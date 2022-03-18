@@ -1,13 +1,13 @@
 import { Popover } from 'antd'
-import React, { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { forwardRef, useEffect, useRef, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
 import { PAGE_BLOG, PAGE_HOME, PAGE_ROUTES, PAGE_STUDY } from '../../../constants/constants';
 
-const HomeLeft = () => {
+const HomeLeft = forwardRef(({ responsive }, ref) => {
     //
     const refPlus = useRef();
     const [click, setClick] = useState({ active: false, click: false });
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState();
     const categories = [
         {
             id: 0,
@@ -39,23 +39,27 @@ const HomeLeft = () => {
         }
     ];
     const nav = useNavigate();
+    const location = useLocation();
     useEffect(() => {
         //
         if (refPlus.current) {
             refPlus.current.style.transform = `rotate(${click.active ? 135 : 90}deg)`;
             refPlus.current.style.fontSize = `${click.active ? 3 : 2}rem`;
         }
-        //
-    }, [click])
+        const index = categories.findIndex(dt => dt.path === location.pathname);
+        if (index !== -1)
+            setActive(index);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [click, location.pathname])
     //
     return (
-        <div className='home-left'>
-            <Popover overlayStyle={{ paddingTop: '0.5rem' }} overlayClassName='arrow-popover'
+        <div className={responsive ? 'menu-responsive' : 'home-left'}>
+            {!responsive && <Popover overlayStyle={{ paddingTop: '0.5rem' }} overlayClassName='arrow-popover'
                 content={() => <div className='home-left-popover'>Viet Blog</div>} placement='bottom' trigger='click'
                 autoAdjustOverflow>
                 <i onClick={() => setClick({ active: !click.active, click: !click.click })} ref={refPlus} className='bx bx-plus block home-left-top'></i>
-            </Popover>
-            <ul className='home-left-category'>
+            </Popover>}
+            <ul ref={ref} className={responsive ? 'menu-responsive-content' : 'home-left-category'}>
                 {categories.map(category =>
                     <li onClick={() => {
                         nav(category.path);
@@ -71,6 +75,6 @@ const HomeLeft = () => {
             </ul>
         </div>
     )
-}
+})
 
-export default HomeLeft
+export default (HomeLeft)

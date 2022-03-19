@@ -8,7 +8,11 @@ const FooterSecond = ({ item }) => {
             <div className='route-footer-left'>
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>
-                <ButtonComponent link=''>
+                <ButtonComponent handleClick={() => {
+                    if (typeof item.handleClick === "function") {
+                        item.handleClick()
+                    }
+                }}>
                     {item.button}
                 </ButtonComponent>
             </div>

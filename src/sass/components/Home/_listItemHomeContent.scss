@@ -98,11 +98,13 @@
                         background-color: variables.$background-gray-main !important;
                     }
                 }
-                &:hover div {
-                    opacity: 1;
-                }
-                &:hover div:hover button {
-                    transform: translateY(0);
+                @include mixins.smallTablet {
+                    &:hover div {
+                        opacity: 1;
+                    }
+                    &:hover div:hover button {
+                        transform: translateY(0);
+                    }
                 }
             }
             &-info {

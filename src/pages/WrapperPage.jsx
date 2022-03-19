@@ -12,6 +12,7 @@ const WrapperPage = ({ children, notFound }) => {
     const location = useLocation();
     useEffect(() => {
         //
+        window.scrollTo(0, 0);
         if (refMenu.current) {
             refMenu.current.parentElement.style.display = 'none';
         }

@@ -8,10 +8,11 @@ import * as validations from './validations';
 const FormLogin = () => {
     // 
     const { authsDispatch, authsAction, auth, auth: { isLogin, isEmail } } = useContext(AuthContext);
+    const schema = !isLogin ? !isEmail ? validations.schemaSignInPhone : validations.schemaSignInEmail
+        : !isEmail ? validations.schemaLoginPhoneCode : validations.schemaLoginEmail;
+    console.log(schema);
     const { register, handleSubmit, reset, formState: { errors } } = useForm({
-        resolver: yupResolver(
-            !isEmail ? validations.schemaSignInPhone : validations.schemaSignInEmail
-        ),
+        resolver: yupResolver(schema),
         mode: "onChange",
     });
     useEffect(() => {
@@ -19,7 +20,9 @@ const FormLogin = () => {
     }, [auth, reset])
     //
     return (
-        <form className='form-login' handleSubmit={handleSubmit}>
+        <form className='form-login' onSubmit={handleSubmit(() => {
+
+        })}>
             {!isLogin && <InputComponent label='Họ tên' type='text' placeholder='Họ tên'
                 register={register} error={errors} name='fullName' className='form-login-input' />}
             <div className='form-login-top'>
@@ -52,7 +55,7 @@ const FormLogin = () => {
                         </div>
                     </>
             }
-            <ButtonComponent type='button' className='form-login-button'>
+            <ButtonComponent type='submit' className='form-login-button'>
                 {isLogin ? 'Đăng nhập' : 'Đăng kí'}
             </ButtonComponent>
         </form >

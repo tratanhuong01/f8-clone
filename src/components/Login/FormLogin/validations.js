@@ -25,6 +25,7 @@ export const schemaLoginEmailResetPassword = yup.object().shape({
 }).required();
 
 export const schemaSignInPhone = yup.object().shape({
+    fullName: yup.string('Họ tên không được chứa chữ số !!').required('Họ tên không được trống !!'),
     phone: yup.string('Số điện thoại phải là số !!').required('Số điện thoại không được trống!!').matches(REGEX_NUMBER_PHONE, 'Số điện thoại không hợp lệ !!'),
     code: yup.string().matches(REGEX_NUMBER, 'Mã xác nhận không hợp lệ !!').required('Mã xác nhận không được trống !!').min(4, 'Mã xác nhận phải có 4 kí tự !!').max(4, 'Mã xác nhận phải có 4 kí tự !!')
 })
